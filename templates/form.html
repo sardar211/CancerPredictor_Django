@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Form Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <style>
+        body {
+            background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+            background-size: 200% auto;
+            transition: background-position 0.5s;
+        }
+
+        body:hover {
+            background-position: right center;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: calc(100% - 40px);
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .form-container {
+            margin-top: 100px;
+            /* Adjust as needed to prevent form from being hidden behind navbar */
+        }
+
+        .btn-grad {
+            background-image: linear-gradient(to right, #fbffff 0%, #ffffff 51%, #fffbfc 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: rgb(10, 194, 235);
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .btn-grad:hover {
+            background-position: right center;
+            color: #141515;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-outline {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+    
+    <div class="container p-5 form-container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example1" name="age" class="form-control" />
+                        <label class="form-label" for="form6Example1">Age</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <select id="form6Example2" name="gender" class="form-control">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                        <label class="form-label" for="form6Example2">Gender</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example3" name="air_pollution" class="form-control" />
+                        <label class="form-label" for="form6Example3">Air Pollution</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example10" class="form-control" name="alcohol_consuming" />
+                        <label class="form-label" for="form6Example10">Alcohol Use</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example4" name="dust_allergy" class="form-control" />
+                        <label class="form-label" for="form6Example4">Dust Allergy</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example5" class="form-control" name="occu_pational_hazards" />
+                        <label class="form-label" for="form6Example5">Occupational Hazards</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example6" class="form-control" name="genetic_risk" />
+                        <label class="form-label" for="form6Example6">Genetic Risk</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example7" class="form-control" name="chronic_lung_disease" />
+                        <label class="form-label" for="form6Example7">Chronic Lung Disease</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example8" class="form-control" name="balanced_diet" />
+                        <label class="form-label" for="form6Example8">Balanced Diet</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example9" class="form-control" name="obesity" />
+                        <label class="form-label" for="form6Example9">Obesity</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example10" class="form-control" name="smoking" />
+                        <label class="form-label" for="form6Example10">Smoking</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example11" class="form-control" name="passive_smoker" />
+                        <label class="form-label" for="form6Example11">Passive Smoker</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example12" class="form-control" name="chest_pain" />
+                        <label class="form-label" for="form6Example12">Chest Pain</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example13" class="form-control" name="coughing_of_blood" />
+                        <label class="form-label" for="form6Example13">Coughing of Blood</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example14" class="form-control" name="fatigue" />
+                        <label class="form-label" for="form6Example14">Fatigue</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example15" class="form-control" name="weight_loss" />
+                        <label class="form-label" for="form6Example15">Weight Loss</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example16" class="form-control" name="shortness_of_breath" />
+                        <label class="form-label" for="form6Example16">Shortness of Breath</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example17" class="form-control" name="wheezing" />
+                        <label class="form-label" for="form6Example17">Wheezing</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example18" class="form-control" name="swallowing_difficulty" />
+                        <label class="form-label" for="form6Example18">Swallowing Difficulty</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example19" class="form-control" name="clubbing_of_finger_nails" />
+                        <label class="form-label" for="form6Example19">Clubbing of Finger Nails</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example20" class="form-control" name="frequent_cold" />
+                        <label class="form-label" for="form6Example20">Frequent Cold</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example21" class="form-control" name="dry_cough" />
+                        <label class="form-label" for="form6Example21">Dry Cough</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-outline">
+                        <input type="text" id="form6Example22" class="form-control" name="snoring" />
+                        <label class="form-label" for="form6Example22">Snoring</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button data-mdb-ripple-init type="submit" class="btn-grad btn-block mb-4">Predict</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
